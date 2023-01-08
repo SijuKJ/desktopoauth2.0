@@ -1,6 +1,6 @@
 name: desktopoauth2
 description: OAuth2.0 authentication for desktop apps
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/SijuKJ/desktopoauth2.0
 
 environment:
