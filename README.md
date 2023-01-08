@@ -6,7 +6,7 @@ A flutter plugin for Desktop app OAuth2.0 protocol (Authorization Code ) by usin
 
 1. Authorization Code Flow
 2. PKCE enabled
-3. Client Secrect support
+3. Client Secret support
 
 ## Add dependency
 
