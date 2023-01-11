@@ -12,7 +12,7 @@ A flutter plugin for Desktop app OAuth2.0 protocol (Authorization Code ) by usin
 
 ```yaml
 dependencies:
-  desktopoauth2: lastest version  
+  desktopoauth2: latest version  
 ```
 
 ## Usage
