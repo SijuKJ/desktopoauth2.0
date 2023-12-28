@@ -62,7 +62,12 @@ class DesktopOAuth2 {
       'grant_type': 'authorization_code',
       'code': code
     };
-
+    if (desktopAuthCodeFlow.pkce == false) {
+      final clientSecret = <String, String>{
+        'client_secret': desktopAuthCodeFlow.clientSecret!
+      };
+      tokenReqPayload.addEntries(clientSecret.entries);
+    }
     if (codeVerifier != null) tokenReqPayload.putIfAbsent("code_verifier", () => codeVerifier);
 
     final response = await http.post(Uri.parse(desktopAuthCodeFlow.tokenUrl), body: tokenReqPayload);
@@ -87,7 +92,6 @@ class DesktopOAuth2 {
 
       return _login(desktopAuthCodeFlow, authUrl, codeVerifier: pkcePair.codeVerifier);
     } else {
-      params.write("&client_secret=${desktopAuthCodeFlow.clientSecret}");
       final Uri authUrl = Uri.parse('${desktopAuthCodeFlow.authorizationUrl}?${params.toString()}');
 
       return _login(desktopAuthCodeFlow, authUrl);
