@@ -58,6 +58,7 @@ class DesktopOAuth2 {
   Future<Map<String, dynamic>?> _fetchAccessToken(DesktopAuthorizationCodeFlow desktopAuthCodeFlow, String code, {String? codeVerifier}) async {
     Map<String, String> tokenReqPayload = {
       'client_id': desktopAuthCodeFlow.clientId,
+      'client_secret': desktopAuthCodeFlow.clientSecret!,
       'redirect_uri': desktopAuthCodeFlow.redirectUri,
       'grant_type': 'authorization_code',
       'code': code
@@ -87,7 +88,6 @@ class DesktopOAuth2 {
 
       return _login(desktopAuthCodeFlow, authUrl, codeVerifier: pkcePair.codeVerifier);
     } else {
-      params.write("&client_secret=${desktopAuthCodeFlow.clientSecret}");
       final Uri authUrl = Uri.parse('${desktopAuthCodeFlow.authorizationUrl}?${params.toString()}');
 
       return _login(desktopAuthCodeFlow, authUrl);
