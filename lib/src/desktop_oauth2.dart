@@ -62,7 +62,7 @@ class DesktopOAuth2 {
       'grant_type': 'authorization_code',
       'code': code
     };
-    if (desktopAuthCodeFlow.pkce = false) {
+    if (desktopAuthCodeFlow.pkce == false) {
       final clientSecret = <String, String>{
         'client_secret': desktopAuthCodeFlow.clientSecret!
       };
