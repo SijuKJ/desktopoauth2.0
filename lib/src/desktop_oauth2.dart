@@ -63,6 +63,7 @@ class DesktopOAuth2 {
       'code': code
     };
 
+    if (desktopAuthCodeFlow.pkce == false) tokenReqPayload.putIfAbsent("client_secret", () => desktopAuthCodeFlow.clientSecret!);
     if (codeVerifier != null) tokenReqPayload.putIfAbsent("code_verifier", () => codeVerifier);
 
     final response = await http.post(Uri.parse(desktopAuthCodeFlow.tokenUrl), body: tokenReqPayload);

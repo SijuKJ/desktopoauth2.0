@@ -10,11 +10,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  
-  url_launcher: ^6.1.7
+
+  url_launcher: ^6.2.5
   pkce: ^1.1.0+1
   window_to_front: ^0.0.3
-  http: ^0.13.5  
+  http: ^1.2.1
 
 dev_dependencies:
   flutter_test:
