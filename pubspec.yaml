@@ -5,8 +5,8 @@ homepage: https://github.com/SijuKJ/desktopoauth2.0
 repository: https://github.com/SijuKJ/desktopoauth2.0
 
 topics:
-  - desktop oauth2.0
-  - oauth2.0 and pkce
+  - desktop-oauth2
+  - oauth2-pkce
 
 environment:
   sdk: '>=2.18.2 <3.3.0'
