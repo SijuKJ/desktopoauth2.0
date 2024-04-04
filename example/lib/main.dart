@@ -50,6 +50,13 @@ class _OauthState extends State<OauthPage> {
                     }),
                   ),
                   onPressed: () async {
+                  
+                    // Optional Feature
+                   Map<String,String> additionalParameters = {};
+                   additionalParameters['companyId'] = "company_name";
+                   additionalParameters['tenantId'] = "tenant_name";
+                   
+
                     DesktopOAuth2 desktopOAuth2 = DesktopOAuth2();
 
                     DesktopAuthorizationCodeFlow desktopAuthCodeFlow = DesktopAuthorizationCodeFlow();
@@ -62,6 +69,12 @@ class _OauthState extends State<OauthPage> {
                     desktopAuthCodeFlow.redirectUri = 'http://localhost:9298/code';
                     desktopAuthCodeFlow.scopes = ['openid'];
                     desktopAuthCodeFlow.tokenUrl = 'https://dev-7932731.okta.com/oauth2/aus12p5r7eLEams5g5d7/v1/token';
+                    //Optional Parameter
+                    desktopAuthCodeFlow.additionalParameters = additionalParameters;
+
+                    // We can use clientScrect instead of PKCE feature. You disable PKCE and put client screct as follows
+                    //desktopAuthCodeFlow.pkce = false;
+                    //desktopAuthCodeFlow.clientSecret = "x-value";
 
                     desktopOAuth2.oauthorizeCode(desktopAuthCodeFlow).then((token) {
                       if (token != null && token.isNotEmpty) {

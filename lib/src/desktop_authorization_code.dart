@@ -10,4 +10,5 @@ class DesktopAuthorizationCodeFlow {
   bool pkce = true;
   //This html code will be sends as response to browser when the redirect uri hit the dart localserver with authorization code 
   String? htmlResponsePayload;
+  Map<String,String>? additionalParameters;
 }

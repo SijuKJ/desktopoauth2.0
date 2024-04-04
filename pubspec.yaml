@@ -1,7 +1,12 @@
 name: desktopoauth2
 description: OAuth2.0 authentication for desktop apps
-version: 1.0.3
+version: 1.0.4
 homepage: https://github.com/SijuKJ/desktopoauth2.0
+repository: https://github.com/SijuKJ/desktopoauth2.0
+
+topics:
+  - desktop OAuth2.0
+  - OAuth2.0 with PKCE
 
 environment:
   sdk: '>=2.18.2 <3.3.0'
